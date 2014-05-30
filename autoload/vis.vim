@@ -73,7 +73,9 @@ fun! vis#VisBlockCmd(cmd) range
 "   call Decho("put cut-out text at end-of-file")
    keepj $pu_
    let lastline= line("$")
+   set ve=
    sil! keepj norm! "ap
+   set ve=all
 "   call Decho("reg-A<".@a.">")
 
    " 3. apply command to those lines
