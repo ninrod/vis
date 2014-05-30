@@ -84,7 +84,7 @@ fun! vis#VisBlockCmd(cmd) range
    " 4. visual-block select the modified text in those lines
 "   call Decho("visual-block select modified text at end-of-file")
    exe "keepj ".lastline
-   exe "keepj norm! 0".vmode."G$\"ad"
+   exe "keepj norm! 0".vmode."G$h\"ad"
 
    " 5. delete excess lines
 "   call Decho("delete excess lines")
