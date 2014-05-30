@@ -45,11 +45,12 @@ fun! vis#VisBlockCmd(cmd) range
    " Initialize so begcol<endcol for non-v modes
    let begcol   = s:VirtcolM1("<")
    let endcol   = s:VirtcolM1(">")
-   if vmode != 'v'
-    if begcol > endcol
-     let begcol  = s:VirtcolM1(">")
-     let endcol  = s:VirtcolM1("<")
-    endif
+   if vmode != 'v' && begcol > endcol
+     let tmp = endcol
+     let endcol = begcol
+     let begcol = tmp
+     " let begcol  = s:VirtcolM1(">")
+     " let endcol  = s:VirtcolM1("<")
    endif
 
    " Initialize so that begline<endline
@@ -70,16 +71,13 @@ fun! vis#VisBlockCmd(cmd) range
 
    " 2. put cut-out text at end-of-file
 "   call Decho("put cut-out text at end-of-file")
-   keepj $
-   keepj pu_
+   keepj $pu_
    let lastline= line("$")
    sil! keepj norm! "ap
 "   call Decho("reg-A<".@a.">")
 
    " 3. apply command to those lines
    let curline = line(".")
-   ka
-   keepj $
 "   call Decho("apply command<".a:cmd."> to those lines (curline=".line(".").")")
    exe "keepj ". curline.',$'.a:cmd
 
@@ -233,9 +231,7 @@ fun! s:VirtcolM1(mark)
 "  call Decho("exe norm! `".a:mark."h")
   exe "keepj norm! `".a:mark."h"
 
-  let vekeep = &ve
   let vc     = virtcol(".")
-  let &ve    = vekeep
 
 "  call Dret("s:VirtcolM1 ".vc)
   return vc
