@@ -220,7 +220,7 @@ fun! s:VirtcolM1(mark)
    return 0
   endif
 
-  if &ve == "block"
+  if &ve =~ "block"
    " Works around a ve=all vs ve=block difference with virtcol().
    " Since s:SaveUserSettings() changes ve to ve=all, this small
    " ve override only affects vis#VisBlockSearch().
