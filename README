@@ -1,7 +1,11 @@
-This is a mirror of http://www.vim.org/scripts/script.php?script_id=1195
+Dr. Chip's Visual Block Commands
+=========
 
-I'm hereby making the <vis.vim> script, long available at http://www.drchip.org/astronaut/vim/index.html#VIS, also available here at vim.sf.net.  There are two commands made available: B and S.
+* This is a mirror of the vim script available at [drchip's website](http://www.drchip.org/astronaut/vim/vbafiles/vis.vba.gz)
 
+
+Current Version: 21E, as of 10.fev.2016
+--------------
 
 ----------------
 Visual Commands:
@@ -15,9 +19,9 @@ Visual Commands:
     The command will then be applied to just the visually selected region.
     For examples:
 
-      Use ctrl-v to select a column and then do a substitute on just that column.  
+      Use ctrl-v to select a column and then do a substitute on just that column.
       ctrl-v ..move.. :B s/pattern/becomes/
-    
+
       Use ctrl-v to select a column, then apply an external filter to just that column.
       ctrl-v ..move.. :B !sort
 
@@ -46,6 +50,3 @@ Related Subjects:
  * For overwriting visual blocks with other visual blocks: see vimtip#808
  * For more on applying substitutes to a visual block: see vimtip#63
  * For swapping pairs of visual blocks: see vimtip#329
-
-(alpha/beta version available at http://www.drchip.org/astronaut/vim/index.html#VIS)
-
