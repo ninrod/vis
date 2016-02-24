@@ -3,8 +3,9 @@ Dr. Chip's Visual Block Commands
 
 * This is a mirror of the vim script available at [drchip's website](http://www.drchip.org/astronaut/vim/vbafiles/vis.vba.gz)
 
-Current Version: 21E, as of 10.fev.2016
+Current Version: 
 --------------
+* version: `21e`, as of `10.fev.2016`
 
 ----------------
 Visual Commands:
