@@ -1,29 +1,28 @@
-Dr. Chip's Visual Block Commands
-=========
+# Dr. Chip's Visual Block Commands
+
 
 * This is a mirror of the vim script available at [drchip's website](http://www.drchip.org/astronaut/vim/vbafiles/vis.vba.gz)
 
-Current Version: 
+## Current Version: 
 --------------
 * version: `21e`, as of `10.fev.2016`
 
-----------------
-Visual Commands:
-----------------
-    B
+## Visual Commands: `B`
 
-    Use V, v, or ctrl-v to visually mark some region.  Then use
-       :B cmd     (this command will appear as:   :'<,'>B cmd)
+* Use `V`, `v`, or `ctrl-v` to visually mark some region.  Then use `:B` (this command will appear as: `:'<,'>B`).  
+The command will then be applied to just the visually selected region.  For example:
 
-    The command will then be applied to just the visually selected region.
-    For examples:
+```viml
+" Use ctrl-v to select a column and then do a substitute on just that column.  
+" ctrl-v ..move.. 
+:B s/pattern/becomes/
+```
 
-      Use ctrl-v to select a column and then do a substitute on just that column.
-      ctrl-v ..move.. :B s/pattern/becomes/
-
-      Use ctrl-v to select a column, then apply an external filter to just that column.
-      ctrl-v ..move.. :B !sort
-
+```viml
+" Use ctrl-v to select a column, then apply an external filter to just that column.
+" ctrl-v ..move.. 
+:B !sort
+```
 
 ----------------
 Visual Searches:
